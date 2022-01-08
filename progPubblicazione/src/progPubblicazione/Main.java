@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        LinkedList<Pubblicazione> articleList = new LinkedList<>(); // Crea LinkedList con solo obj Articolo
+        LinkedList<Pubblicazione> articleList = new LinkedList<>();
         int scelta = 0;
         int pubblicazione = 0;
         String nArticolo;
