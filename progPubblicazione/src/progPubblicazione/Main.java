@@ -19,14 +19,14 @@ public class Main {
                 case 1:
                     System.out.print("Premi 1 per inserire un libro, premi 2 per inserire un periodico: ");
                     pubblicazione = in.nextInt();
-                    // Add CD
+                    // Add Libro
                     if(pubblicazione == 1) {
                         Libro libro = new Libro();
                         libro.setPubblicazione();
                         articleList.add(libro);
                         break;
                     }
-                    // Add DVD
+                    // Add Periodico
                     else if(pubblicazione == 2) {
                         Periodico periodico = new Periodico();
                         periodico.setPubblicazione();
