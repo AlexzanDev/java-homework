@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        LinkedList<Pubblicazione> articleList = new LinkedList<>();
+        LinkedList<Pubblicazione> publicationList = new LinkedList<>();
         int scelta = 0;
         int pubblicazione = 0;
         String nArticolo;
@@ -23,7 +23,7 @@ public class Main {
                     if(pubblicazione == 1) {
                         Libro libro = new Libro();
                         libro.setPubblicazione();
-                        articleList.add(libro);
+                        publicationList.add(libro);
                         break;
                     }
                     // Add Periodico
@@ -32,7 +32,7 @@ public class Main {
                         periodico.setPubblicazione();
                         periodico.setDirettore();
                         periodico.setPeriodicita();
-                        articleList.add(periodico);
+                        publicationList.add(periodico);
                         break;
                     }
                     else {
@@ -42,7 +42,7 @@ public class Main {
                 case 2:
                     System.out.print("Inserire titolo pubblicazione: ");
                     nArticolo = in.next();
-                    for (Pubblicazione publication : articleList) {
+                    for (Pubblicazione publication : publicationList) {
                         if (nArticolo.equals(publication.getTitolo())) {
                             if(publication instanceof Libro) { // Compara tipo oggetto
                                 System.out.println(((Libro) publication).getLibro());
@@ -64,9 +64,9 @@ public class Main {
                 case 3:
                     System.out.print("Inserire titolo pubblicazione: ");
                     nArticolo = in.next();
-                    for (Pubblicazione publication : articleList) {
+                    for (Pubblicazione publication : publicationList) {
                         if (nArticolo.equals(publication.getTitolo())) {
-                            articleList.remove(publication);
+                            publicationList.remove(publication);
                             System.out.println("Pubblicazione rimossa.");
                             found = true;
                         }
@@ -81,7 +81,7 @@ public class Main {
                 case 4:
                     System.out.print("Inserire titolo pubblicazione: ");
                     nArticolo = in.next();
-                    for (Pubblicazione publication : articleList) {
+                    for (Pubblicazione publication : publicationList) {
                         if (nArticolo.equals(publication.getTitolo())) {
                             if(publication instanceof Libro) {
                                 ((Libro) publication).copiaVenduta();
