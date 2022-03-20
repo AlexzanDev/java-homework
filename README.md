@@ -1,3 +1,3 @@
 # java-homework
 
-Compiti di Java. Repo riservata a pochi.
+My Java homeworks. I'm sorry if they suck.
