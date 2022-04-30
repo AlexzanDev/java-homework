@@ -1,0 +1,4 @@
+Palermo;PA;648267
+Genova;GE;900262
+Foggia;FG;386474
+Roma;RO;12745
