@@ -20,7 +20,6 @@ public class searchStati {
     private JTextField fieldNome;
     private JButton cercaStatoButton;
     private JPanel bandiera;
-    private JButton modificaStatoButton;
     private JButton rimuoviStatoButton;
 
     public searchStati() {
@@ -56,7 +55,7 @@ public class searchStati {
                                     ImageIcon icon = new ImageIcon(image);
                                     JOptionPane.showMessageDialog(panelCerca, new JLabel("<html><body>Stato: " +
                                             nomeStato + "<br>Abitanti: " + popolazioneStato + "<br>PIL: " + pilStato +
-                                            " euro.<br>Superficie: " + superficieStato + "km^2.</body></html>", icon, JLabel.LEFT),
+                                            " euro<br>Superficie: " + superficieStato + "km^2</body></html>", icon, JLabel.LEFT),
                                             "Informazioni su" + " " + nome, JOptionPane.PLAIN_MESSAGE);
                                 } catch (IOException ex) {
                                     ex.printStackTrace();
@@ -97,39 +96,6 @@ public class searchStati {
                             if(nome.equals(nomeStato)) {
                                 mondo.remove(stato);
                                 JOptionPane.showMessageDialog(panelCerca, "Stato rimosso dalla lista.", "Avviso!", JOptionPane.INFORMATION_MESSAGE);
-                                statoFound = true;
-                                break;
-                            }
-                        }
-                        if(!statoFound) {
-                            JOptionPane.showMessageDialog(panelCerca, "Stato non trovato.", "Avviso!", JOptionPane.INFORMATION_MESSAGE);
-                        }
-                    }
-                }
-            }
-        });
-        modificaStatoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                List<Stato> mondo = Mondo.getMondo();
-                String nome = fieldNome.getText();
-                boolean statoFound = false;
-                if(nome.equals("")) {
-                    JOptionPane.showMessageDialog(panelCerca, "Inserisci il nome dello stato.", "Avviso!", JOptionPane.INFORMATION_MESSAGE);
-                }
-                else {
-                    int mondoSize = mondo.size();
-                    if (mondoSize == 0) {
-                        JOptionPane.showMessageDialog(panelCerca, "La lista è vuota.", "Avviso!", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                    else {
-                        for (Stato stato : mondo) {
-                            nome = nome.substring(0,1).toUpperCase() + nome.substring(1).toLowerCase();
-                            String nomeStato = stato.getNome();
-                            // Apri il pannello della modifica stato.
-                            if(nome.equals(nomeStato)) {
-                                // TODO: Sistemare la modifica dello stato.
-                                panelEdit.genPanel();
                                 statoFound = true;
                                 break;
                             }

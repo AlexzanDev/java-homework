@@ -24,6 +24,7 @@ public class StatiForm {
     private JButton ricercaButton;
     private JTextArea elencoNazioni;
     private JButton mostraListaButton;
+    private JButton modificaStatoButton;
     FileWriter fileName = null;
     PrintWriter fileOut = null;
 
@@ -147,6 +148,12 @@ public class StatiForm {
                     }
                     elencoNazioni.setText(strOutput);
                 }
+            }
+        });
+        modificaStatoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelEdit.genPanel();
             }
         });
     }
